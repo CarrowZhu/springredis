@@ -67,5 +67,15 @@ condition：（String）支持SpringEL，缓存操作条件 <br>
 key：（String）支持SpringEL，缓存对应的key值，必须提供 <br>
 hashKey：（String）支持SpringEL，缓存对应的hashKey值，必须提供 <br>
 
+### SpringEL
+Name > Location  > Example <br>
+methodName > root  object > #root.methodName <br>
+method > root object > #root.method.name <br>
+target > root object > #root.target <br>
+targetClass > root object > #root.targetClass <br>
+args > root object > #root.args[0] <br>
+argument name > evaluation context > #name (编译时必须保留方法名信息) <br>
+result > evaluation context > #result <br>
+
 ## 示例 <br>
 参考 /src/test 路径下的测试用例 <br>
