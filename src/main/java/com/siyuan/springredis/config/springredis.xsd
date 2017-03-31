@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+
+<xsd:schema xmlns="http://www.siyuan.com/schema/springredis"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:beans="http://www.springframework.org/schema/beans"
+	xmlns:tool="http://www.springframework.org/schema/tool"
+	targetNamespace="http://www.siyuan.com/schema/springredis"
+	elementFormDefault="qualified" attributeFormDefault="unqualified">
+
+	<xsd:import namespace="http://www.springframework.org/schema/beans"
+		schemaLocation="http://www.springframework.org/schema/beans/spring-beans-4.2.xsd" />
+
+	<xsd:element name="annotation-driven">
+		<xsd:complexType>
+			<xsd:attribute name="redisTemplate" type="xsd:string" default="redisTemplate">
+				<xsd:annotation>
+					<xsd:documentation><![CDATA[Advice中将使用的redisTemplate，默认为"redisTemplate"]]></xsd:documentation>
+				</xsd:annotation>
+			</xsd:attribute>
+			<xsd:attribute name="order" type="xsd:token" default="-2147483648">
+				<xsd:annotation>
+					<xsd:documentation><![CDATA[Advice的执行顺序,默认优先级最高(Ordered.HIGHEST_PRECEDENCE)]]></xsd:documentation>
+				</xsd:annotation>
+			</xsd:attribute>
+			<xsd:attribute name="exceptionHandler" type="xsd:string">
+				<xsd:annotation>
+					<xsd:documentation>
+					   <![CDATA[beanId,实现接口com.siyuan.springredis.interceptor.SpringRedisExceptionHandler,
+				                                   默认为com.siyuan.springredis.interceptor.LoggerExceptionHandler]]>
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:attribute>
+		</xsd:complexType>
+	</xsd:element>
+
+</xsd:schema>
